@@ -33,6 +33,10 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
+      - name: Convert BDD tests to Playwright format
+        run: npx bddgen
+
+
       - name: Run Playwright tests
         env:
           BASE_URL_DEV: ${{ secrets.BASE_URL_DEV }}
