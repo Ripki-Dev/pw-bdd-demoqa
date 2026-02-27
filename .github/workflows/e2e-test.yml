@@ -10,7 +10,7 @@ on:
         required: true
         type: choice
         default: dev
-        options: [dev, stg, prd]
+        options: [DEV, STG, PRD]
 
 jobs:
   test:
@@ -41,7 +41,7 @@ jobs:
         run: |
           TARGET_ENV=${{ github.event_name == 'workflow_dispatch' && inputs.target_env || 'dev' }}
           echo "Running tests on: $TARGET_ENV"
-          npm run test:$TARGET_ENV
+          npx playwright test --project=$TARGET_ENV
 
       - name: Upload Playwright Report
         uses: actions/upload-artifact@v4
