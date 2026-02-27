@@ -10,7 +10,7 @@ on:
         required: true
         type: choice
         default: dev
-        options: [DEV, STG, PRD]
+        options: [DEV, STG, PROD]
 
 jobs:
   test:

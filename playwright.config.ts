@@ -4,7 +4,7 @@ import * as dotenv from 'dotenv';
 
 dotenv.config();
 
-const environments = ['DEV', 'STG', 'PRD'] as const;
+const environments = ['DEV', 'STG', 'PROD'] as const;
 const testDir = defineBddConfig({
   features: 'features/**/*.feature',
   steps: ['features/steps/**/*.ts', 'features/support/**/*.ts'],
